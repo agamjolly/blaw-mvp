@@ -1,0 +1,25 @@
+Welcome, {{ data["name"] }}!
+<br><br>
+Your role: {{ data["role"] }}
+<br><br>
+List of teachers:<br>
+{% for entry in db %}
+    {% if entry["role"] == "teacher" %}
+        {{ entry["name"] }}<br>       
+    {% endif %}
+{% endfor %}
+
+<br><br>
+
+List of students:<br>
+{% for entry in db %}
+    {% if entry["role"] == "student" %}
+        {{ entry["name"] }} <br>       
+    {% endif %}
+{% endfor %}
+
+
+
+
+
+

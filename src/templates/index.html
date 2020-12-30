@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }} | Berkeley Law Seating Chart{% endblock %}
+{% block body %}
+<!-- Navbar start -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Logo / Name -->
+    <a class="navbar-brand" href={{ url_for("index") }}>Berkeley Law Seating Chart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- Navbar left-aligned content goes here. -->
+      </ul>
+        <a href = "/signin"><button class="btn btn-outline-light">Sign in with CalNet ID</button></a>
+    </div>
+  </nav>
+<!-- Navbar end -->
+
+<!-- Body start -->
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">UC Berkeley School of Law &mdash; Seating Chart</h1>
+      <p>Sign in with your CalNet ID to check your current class listings and seating information. If you're an instructor, please sign in with your credentials to access the administrator portal, and configure seating information.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Get started</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <h1>So, what's new? </h1>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Improved UI</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      </div>
+      <div class="col-md-4">
+        <h2>More functionality</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        
+      </div>
+      <div class="col-md-4">
+        <h2>Heading</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+  <p style="text-align: center;">&copy; UC Berkeley School of Law 2020.</p>
+</footer>
+
+<!-- Content end -->
+
+{% endblock %}

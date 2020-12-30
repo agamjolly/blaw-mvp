@@ -1,0 +1,19 @@
+Welcome, {{ data["name"] }}!
+<br><br>
+Your role: {{ data["role"] }}
+<br>
+
+{% if data["classes"] %}
+    You are taking the following classes: <br>
+
+    {% for classes in data["classes"] %}
+            {{ classes }} <br>
+    {% endfor %}
+
+{% else %}
+    You are not taking any classes this semester.
+{% endif %}
+
+
+
+
