@@ -188,4 +188,5 @@ def signin():
     }
     return render_template("signin.html", title = info.get("title"))
 
-app.run(host = "0.0.0.0", port = 80)
+if __name__ == "__main__":
+    app.run(host = "0.0.0.0", port = 80, debug = False)
