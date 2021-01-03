@@ -117,25 +117,26 @@ def auth(user_key):
     elif user_key == "instructors":
         return jsonify(instructors)
     elif user_key in accepted_keys:
-        return
+        return jsonify(db)
     else:
         return jsonify(error="Invalid key"), 406
 
 @app.route('/api/v1/', methods=["POST", "GET"])
 def api():
     if request.method == "POST":
-        user_key = request.json["key"]
-        if user_key == "users":
-            return jsonify(db)
-        elif user_key == "admins":
-            return jsonify(admins)
-        elif user_key == "students":
-            return jsonify(students)
-        elif user_key == "instructors":
-            return jsonify(instructors)
-        elif user_key in accepted_keys:
-            return
-        else:
+        try:
+            user_key = request.json["key"]
+            if user_key == "users":
+                return jsonify(db)
+            elif user_key == "admins":
+                return jsonify(admins)
+            elif user_key == "students":
+                return jsonify(students)
+            elif user_key == "instructors":
+                return jsonify(instructors)
+            elif user_key in accepted_keys:
+                return
+        except:
             return jsonify(error="Invalid key"), 406
 
     else: 
@@ -166,6 +167,10 @@ def validate(username, password):
 
 @app.route("/signin", methods = ['GET', 'POST'])
 def signin():
+    info = { 
+        "title": "Sign In"
+    }
+
     if request.method == "POST":
         credentials = request.form
         username = credentials["username"]
@@ -181,12 +186,10 @@ def signin():
             else:
                 return render_template("teacher.html", data = data)
         else:
-            return "Invalid username or password."      
+            return render_template("signin.html", title = info.get("title"), invalid = True)      
     
-    info = { 
-        "title": "Sign In"
-    }
-    return render_template("signin.html", title = info.get("title"))
+    
+    return render_template("signin.html", title = info.get("title"), invalid = False)
 
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 80, debug = False)

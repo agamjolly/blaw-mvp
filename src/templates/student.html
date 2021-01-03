@@ -1,3 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }} | Berkeley Law Seating Chart{% endblock %}
+{% block body %}
+
+
+
+
+<!-- Navbar start -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Logo / Name -->
+    <a class="navbar-brand" href={{ url_for("index") }}>Berkeley Law Seating Chart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- Navbar left-aligned content goes here. -->
+      </ul>
+        <a href = "#"><button class="btn btn-outline-light">Welcome, {{ data["name"] }}</button></a>
+    </div>
+  </nav>
+<!-- Navbar end -->
+
+
 Welcome, {{ data["name"] }}!
 <br><br>
 Your role: {{ data["role"] }}
@@ -14,6 +39,10 @@ Your role: {{ data["role"] }}
     You are not taking any classes this semester.
 {% endif %}
 
-
-
-
+<footer class="container">
+    <p style="text-align: center;">&copy; UC Berkeley School of Law 2020.</p>
+  </footer>
+  
+  <!-- Content end -->
+  
+  {% endblock %}

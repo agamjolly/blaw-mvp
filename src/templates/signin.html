@@ -57,6 +57,17 @@
 <body class="text-center"><
     <form class="form-signin" action="{{ url_for('signin') }}" method="POST">
       <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/UC_Berkeley_School_of_Law_logo_%282020%29.png" alt="" width="346" height="72">
+      
+      
+      {% if invalid %}
+        
+      <div class="alert alert-danger" role="alert">
+          Incorrect username or password.
+      </div>
+      
+        {% endif %}
+      
+      
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputUsername" class="sr-only">Email address</label>
       <input type="username" id="inputUsername" class="form-control" placeholder="Email address" required autofocus, name="username">
