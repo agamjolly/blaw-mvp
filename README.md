@@ -2,11 +2,11 @@
 
 Making a Docker image using the Dockerfile.
 
-`docker build -t covidplasma .`
+`docker build -t blaw-mvp .`
 
 Running the Docker image on port 80. 
 
-`docker run -p 80:80 covidplasma`
+`docker run -p 80:80 blaw-mvp`
 
 Stopping all Docker containers.
 
@@ -18,4 +18,4 @@ Deleting all Docker containers.
 
 Running the Docker image until stopped.
 
-`docker run -d --restart unless-stopped -p 80:80 covidplasma`
+`docker run -d --restart unless-stopped -p 80:80 blaw-mvp`
