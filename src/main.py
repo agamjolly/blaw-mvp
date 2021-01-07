@@ -1,47 +1,16 @@
 from flask import *
 from collections import defaultdict
+import json
+import os
 
 app = Flask(__name__)
 
-# assuming we get a JSON in response from Devin's law school API
+# fetching the db assuming we get a JSON in response from Devin's law school API 
 
-db = [ 
-    { 
-        "name": "Devin Jones",
-        "username": "devinjones",
-        "password": "devinjones",
-        "role": "admin",
-        "classes": []
-    }, 
-    { 
-        "name": "John DeNero",
-        "username": "denero",
-        "password": "denero",
-        "role": "teacher",
-        "classes": ["61a", "100"]
-    }, 
-    { 
-        "name": "Agam Jolly",
-        "username": "agamjolly", 
-        "password": "agamjolly", 
-        "role": "student",
-        "classes": ["61a", "61b", "16a"]
-    },
-    { 
-        "name": "Lara Chu",
-        "username": "larachu", 
-        "password": "larachu", 
-        "role": "student",
-        "classes": ["100", "61c", "61b", "61a", "61c"]
-    },
-    { 
-        "name": "Josh Hug",
-        "username": "joshhug", 
-        "password": "joshhug", 
-        "role": "teacher",
-        "classes": ["61b", "100"]
-    }
-]
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+json_url = os.path.join(SITE_ROOT, "static/data", "db.json")
+db = json.load(open(json_url)) 
+
 
 def is_teacher(entry):
     """Returns if the entry is a teacher."""
@@ -165,6 +134,10 @@ def validate(username, password):
             return True, entry
     return False, None
 
+@app.route("/logout", methods = ['GET', 'POST'])
+def logout():
+    return redirect(url_for("signin"), code = 302)
+
 @app.route("/signin", methods = ['GET', 'POST'])
 def signin():
     info = { 
@@ -192,4 +165,4 @@ def signin():
     return render_template("signin.html", title = info.get("title"), invalid = False)
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = 80, debug = False)
+    app.run(host = "0.0.0.0", port = 80, debug = True)

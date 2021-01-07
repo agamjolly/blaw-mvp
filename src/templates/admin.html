@@ -1,3 +1,9 @@
+{% extends "signed_template.html" %}
+{% block title %}{{ data["name"] }} | Berkeley Law Seating Chart{% endblock %}
+{% block body %}
+
+<div class="ml-2">
+
 Welcome, {{ data["name"] }}!
 <br><br>
 Your role: {{ data["role"] }}
@@ -18,8 +24,5 @@ List of students:<br>
     {% endif %}
 {% endfor %}
 
-
-
-
-
-
+</div>
+{% endblock %}

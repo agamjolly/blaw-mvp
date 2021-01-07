@@ -1,0 +1,72 @@
+[ 
+    { 
+        "name": "Devin Jones",
+        "username": "devinjones",
+        "password": "devinjones",
+        "role": "admin",
+        "classes": []
+    }, 
+    { 
+        "name": "John DeNero",
+        "username": "denero",
+        "password": "denero",
+        "role": "teacher",
+        "classes": ["61a"]
+    }, 
+    { 
+        "name": "Agam Jolly",
+        "username": "agamjolly", 
+        "password": "agamjolly", 
+        "role": "student",
+        "classes": ["170", "100"]
+    },
+    { 
+        "name": "Lara Chu",
+        "username": "larachu", 
+        "password": "larachu", 
+        "role": "student",
+        "classes": ["100", "61c"]
+    },
+    { 
+        "name": "Josh Hug",
+        "username": "joshhug", 
+        "password": "joshhug", 
+        "role": "teacher",
+        "classes": ["61b", "100"]
+    },
+    { 
+        "name": "Rachel Lee",
+        "username": "rachellee", 
+        "password": "rachellee", 
+        "role": "student",
+        "classes": ["100", "127"]
+    }, 
+    { 
+        "name": "Siddhant Sharma",
+        "username": "siddhantsharma", 
+        "password": "siddhantsharma", 
+        "role": "student",
+        "classes": ["127", "61b"]
+    },
+    { 
+        "name": "Eve Lin",
+        "username": "evelin", 
+        "password": "evelin", 
+        "role": "student",
+        "classes": ["61a", "61b"]
+    }, 
+    { 
+        "name": "Ebru Odok",
+        "username": "ebruodok", 
+        "password": "ebruodok", 
+        "role": "student",
+        "classes": ["100", "170"]
+    },
+    { 
+        "name": "Marcela Siqueira",
+        "username": "marcelasiqueira", 
+        "password": "marcelasiqueira", 
+        "role": "student",
+        "classes": ["61a", "170"]
+    }
+]

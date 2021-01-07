@@ -1,19 +1,26 @@
-Welcome, {{ data["name"] }}!
-<br><br>
-Your role: {{ data["role"] }}
-<br>
+{% extends "signed_template.html" %}
+{% block title %}{{ data["name"] }} | Berkeley Law Seating Chart{% endblock %}
+{% block body %}
 
-{% if data["classes"] %}
-    You are teaching the following classes: <br>
+<div class="ml-2">
 
-    {% for classes in data["classes"] %}
-            {{ classes }} <br>
-    {% endfor %}
+    Welcome, {{ data["name"] }}!
+    <br><br>
+    Your role: {{ data["role"] }}
+    <br>
 
-{% else %}
-    You are not taking any classes this semester.
-{% endif %}
+        {% if data["classes"] %}
+            You are teaching the following classes: <br>
 
+            {% for classes in data["classes"] %}
+                    {{ classes }} <br>
+            {% endfor %}
 
+        {% else %}
+            You are not taking any classes this semester.
+        {% endif %}
+
+</div>
+{% endblock %}
 
 
